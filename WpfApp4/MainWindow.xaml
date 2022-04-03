@@ -1,0 +1,64 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        xmlns:localConst="clr-namespace:WpfApp4.Constants"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="300" Width="400">
+    <Window.DataContext>
+        <local:CounterViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="74,21,0,0" TextWrapping="Wrap" 
+                 Text="{Binding Value}" VerticalAlignment="Top" Width="139"/>
+        <Button Content="カウントダウン" HorizontalAlignment="Left" Margin="294,21,0,0"
+                VerticalAlignment="Top" Width="75"
+                Command="{Binding CountDownCommand}"/>-->
+
+
+        <TextBlock x:Name="valATitle" HorizontalAlignment="Left" Height="23" Margin="34,69,0,0" 
+                   TextWrapping="Wrap" Text="a" VerticalAlignment="Top" Width="20"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="74,69,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NumAVal}" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="valAPM" HorizontalAlignment="Left" Height="23" Margin="194,69,0,0" 
+                   TextWrapping="Wrap" Text="{x:Static localConst:Constants.PM}" VerticalAlignment="Top" Width="20"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="234,69,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NumAErr}" VerticalAlignment="Top" Width="100"/>
+
+        <TextBlock x:Name="valBTitle" HorizontalAlignment="Left" Height="23" Margin="34,109,0,0" 
+                   TextWrapping="Wrap" Text="b" VerticalAlignment="Top" Width="20"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="74,109,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NumBVal}" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="valBPM" HorizontalAlignment="Left" Height="23" Margin="194,109,0,0" 
+                   TextWrapping="Wrap" Text="{x:Static localConst:Constants.PM}" VerticalAlignment="Top" Width="20"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="234,109,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NumBErr}" VerticalAlignment="Top" Width="100"/>
+
+        <Button x:Name="btnCalcAdd" Content="+" HorizontalAlignment="Left" Height="20" Margin="44,149,0,0"
+                VerticalAlignment="Top" Width="40" Command="{Binding AddCommnad_}"/>
+        <Button x:Name="btnCalcSub" Content="-" HorizontalAlignment="Left" Height="20" Margin="94,149,0,0"
+                VerticalAlignment="Top" Width="40" Command="{Binding SubCommnad_}"/>
+        <Button x:Name="btnCalcMul" Content="*" HorizontalAlignment="Left" Height="20" Margin="144,149,0,0"
+                VerticalAlignment="Top" Width="40" Command="{Binding MulCommnad_}"/>
+        <Button x:Name="btnCalcDiv" Content="/" HorizontalAlignment="Left" Height="20" Margin="194,149,0,0"
+                VerticalAlignment="Top" Width="40" Command="{Binding DivCommnad_}"/>
+
+        <TextBlock x:Name="valResTitle" HorizontalAlignment="Left" Height="23" Margin="34,189,0,0" 
+                   TextWrapping="Wrap" Text="res" VerticalAlignment="Top" Width="20"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="74,189,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NumResVal}" VerticalAlignment="Top" Width="100"/>
+        <TextBlock x:Name="valResPM" HorizontalAlignment="Left" Height="23" Margin="194,189,0,0" 
+                   TextWrapping="Wrap" Text="{x:Static localConst:Constants.PM}" VerticalAlignment="Top" Width="20"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="234,189,0,0" TextWrapping="Wrap" 
+                 Text="{Binding NumResErr}" VerticalAlignment="Top" Width="100"/>
+
+        <Button x:Name="btnPasteA" Content="a に貼り付け" HorizontalAlignment="Left" Height="20" Margin="44,229,0,0"
+                VerticalAlignment="Top" Width="80" Command="{Binding PasteResultCommand_}" CommandParameter="A"/>
+        <Button x:Name="btnPasteB" Content="b に貼り付け" HorizontalAlignment="Left" Height="20" Margin="134,229,0,0"
+                VerticalAlignment="Top" Width="80" Command="{Binding PasteResultCommand_}" CommandParameter="B"/>
+
+
+    </Grid>
+</Window>
